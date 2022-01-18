@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EFCore.WebAPI.Models
+namespace EFCore.Domain
 {
     //isso aqui seria uma "tabela de relacionamento" (classe, nesse caso)
     public class HeroiBatalha

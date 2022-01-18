@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.WebAPI", "EFCore.WebAPI\EFCore.WebAPI.csproj", "{8D2CAD77-B632-49BF-ACC5-5EFBCB0F6266}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.WebAPI", "EFCore.WebAPI\EFCore.WebAPI.csproj", "{8D2CAD77-B632-49BF-ACC5-5EFBCB0F6266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.Domain", "EFCore.Domain\EFCore.Domain.csproj", "{F8BA4FFC-2E0A-451F-B08A-696E280F2E58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.Repo", "EFCore.Repo\EFCore.Repo.csproj", "{48E16660-6975-42D9-B8CE-CE3B4D8E99D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{8D2CAD77-B632-49BF-ACC5-5EFBCB0F6266}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D2CAD77-B632-49BF-ACC5-5EFBCB0F6266}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D2CAD77-B632-49BF-ACC5-5EFBCB0F6266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8BA4FFC-2E0A-451F-B08A-696E280F2E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8BA4FFC-2E0A-451F-B08A-696E280F2E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8BA4FFC-2E0A-451F-B08A-696E280F2E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8BA4FFC-2E0A-451F-B08A-696E280F2E58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E16660-6975-42D9-B8CE-CE3B4D8E99D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E16660-6975-42D9-B8CE-CE3B4D8E99D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E16660-6975-42D9-B8CE-CE3B4D8E99D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E16660-6975-42D9-B8CE-CE3B4D8E99D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

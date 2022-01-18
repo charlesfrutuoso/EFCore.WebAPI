@@ -1,14 +1,26 @@
-﻿using EFCore.WebAPI.Models;
+﻿using EFCore.Domain;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EFCore.WebAPI.Data
+namespace EFCore.Repo
 {
     public class HeroiContext : DbContext
     {
+        //construtor do DbContext deve receber a conexão SQL Server (options), que foi passada lá pelo Startup.cs da WebAPI
+        public HeroiContext(DbContextOptions<HeroiContext> options) : base(options)
+        {
+
+        }
+        
+        //anteriormente, estávamos fazendo a configuração da conexão SQL Server pelo método "OnConfiguring" abaixo,
+        //mas agora estamos injetando essa conexão direto no construtor acima
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //}
+
         //nomes em plural, pois representam listas 
         public DbSet<Heroi> Herois { get; set; }
 
@@ -20,10 +32,7 @@ namespace EFCore.WebAPI.Data
 
         public DbSet<IdentidadeSecreta> IdentidadesSecretas { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Password=pr0d@p123;Persist Security Info=True;User ID=sa;Initial Catalog=HeroApp;Data Source=.\SQLEXPRESS;");
-        }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -5,15 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20220112223020_initial.cs" />
-    <Compile Remove="Migrations\20220112223020_initial.Designer.cs" />
-    <Compile Remove="Migrations\20220113220645_add-migration initial.cs" />
-    <Compile Remove="Migrations\20220113220645_add-migration initial.Designer.cs" />
-    <Compile Remove="Migrations\20220113220827_initial.cs" />
-    <Compile Remove="Migrations\20220113220827_initial.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="3.1.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.22">
@@ -25,6 +16,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EFCore.Domain\EFCore.Domain.csproj" />
+    <ProjectReference Include="..\EFCore.Repo\EFCore.Repo.csproj" />
   </ItemGroup>
 
 
