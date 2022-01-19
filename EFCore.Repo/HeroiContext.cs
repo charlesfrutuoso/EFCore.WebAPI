@@ -10,16 +10,18 @@ namespace EFCore.Repo
     public class HeroiContext : DbContext
     {
         //construtor do DbContext deve receber a conexão SQL Server (options), que foi passada lá pelo Startup.cs da WebAPI
-        public HeroiContext(DbContextOptions<HeroiContext> options) : base(options)
-        {
+        public HeroiContext(DbContextOptions<HeroiContext> options) : base(options){}
 
-        }
-        
+        //construtor vazio
+        //public HeroiContext(){}
+
         //anteriormente, estávamos fazendo a configuração da conexão SQL Server pelo método "OnConfiguring" abaixo,
-        //mas agora estamos injetando essa conexão direto no construtor acima
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //}
+        //mas agora estamos injetando essa conexão direto no construtor acima, porém vamos manter o método
+        //onconfiguring abaixo, para que essa classe possa ser instanciada pelo construtor vazio também
+        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Password=pr0d@p123;Persist Security Info=True;User ID=sa;Initial Catalog=HeroApp;Data Source=.\\SQLEXPRESS;");
+        }*/
 
         //nomes em plural, pois representam listas 
         public DbSet<Heroi> Herois { get; set; }

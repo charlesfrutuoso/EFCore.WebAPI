@@ -26,6 +26,7 @@ namespace EFCore.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //adiciona o contexto do banco de dados para a HeroApp, pra que fique disponivel para as controllers
             services.AddDbContext<HeroiContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
