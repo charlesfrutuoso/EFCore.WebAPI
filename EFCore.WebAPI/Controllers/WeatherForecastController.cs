@@ -64,5 +64,64 @@ namespace EFCore.WebAPI.Controllers
 
             return Ok(listHeroi);
         }
+
+        //4º) teste de select com where do heroi pelo EFCore com rota específica
+        [HttpGet("filtro/{nome}")]
+        public ActionResult GetNome(string nome)
+        {
+
+            //usando padrão "LINQ Methods"
+            var listHeroi = _context.Herois.Where(x => x.Nome.Contains(nome)).ToList();
+
+            //usando padrão "LINQ Query"
+            //var listHeroi = (from heroi in _context.Herois where heroi.Nome.Contains(nome) select heroi).ToList();
+
+            return Ok(listHeroi);
+        }
+
+        //5º) teste de update do heroi pelo EFCore 
+        [HttpGet("atualizar/{id}/{novonome}")]
+        public ActionResult Get(int id, string novonome)
+        {
+            //pega o herói pelo id recebido no parametro
+            var heroi = _context.Herois.Where(x => x.Id == id).FirstOrDefault();
+
+            //altrera nome pelo nome recebido no parametro
+            heroi.Nome = novonome;
+
+            _context.SaveChanges();
+            return Ok();
+        }
+
+        //6º) inserindo vários heróis por AddRange pra testar a exclusão depois
+        [HttpGet("addRange")]
+        public ActionResult GetAddRange()
+        {
+            _context.Herois.AddRange(
+                new Heroi { Nome = "Capitão América" },
+                new Heroi { Nome = "Deadpool" },
+                new Heroi { Nome = "Hulk" },
+                new Heroi { Nome = "Mulher Maravilha" },
+                new Heroi { Nome = "Viúva Negra" },
+                new Heroi { Nome = "Pantera Negra" }
+            );
+            
+            _context.SaveChanges();
+            return Ok();
+        }
+
+        //7º) teste de delete do heroi pelo EFCore 
+        [HttpGet("delete/{id}")]
+        public ActionResult Get(int id)
+        {
+            //pega o herói pelo id recebido no parametro
+            var heroi = _context.Herois.Where(x => x.Id == id).Single();
+
+            _context.Herois.Remove(heroi);
+            _context.SaveChanges();
+            return Ok();
+        }
+
+
     }
 }
