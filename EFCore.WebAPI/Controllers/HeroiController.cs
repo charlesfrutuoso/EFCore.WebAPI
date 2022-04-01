@@ -44,7 +44,7 @@ namespace EFCore.WebAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult Get(int id)
         {
-            return Ok("value");
+            return Ok(_context.Herois.Find(id));
         }
 
         // POST api/<HeroiController> (comentado apenas pra ficar de exemplo do que já foi feito)
